@@ -28,7 +28,7 @@ function getService () {
 
     var service = prompt('Le numéro du service souhaité :');
     service = parseInt(service);
-    
+
     if (service === 17) {
         alert('Vous souhaitez joindre la Police');
     } else if (service === 18) {
@@ -45,3 +45,4 @@ function getService () {
 
 }
 getService();
+comparaison();
