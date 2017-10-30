@@ -1,0 +1,19 @@
+
+
+oper = demander à l'utilisateur le type d'opération :
+var1 = demander à l'utilisateur la 1er valeur : => parseInt(prompt('valeur 1'));
+var2 = demander à l'utilisateur la deuxième valeur:
+
+si (oper === '+')
+
+alors afficher (var1+var2)
+
+sinon si (oper === '-')
+alors afficher (var1-var2)
+
++
+-
+*
+/
+%
+

@@ -71,5 +71,3 @@ function afficheNiemeObj(tabObj, n) {
         alert('indice non trouvé');
     }
 };
-
-afficheNiemeObj(tabOject, 2);
