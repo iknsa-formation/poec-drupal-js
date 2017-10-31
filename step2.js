@@ -61,7 +61,7 @@ var afficheObjet = function () {
     tabOject[1].prenom = 'Khalid';
 
     console.log(tabOject[1]);
-}   
+}; 
 
 function afficheNiemeObj(tabObj, n) {
     if(tabObj.length > n) {
@@ -70,4 +70,4 @@ function afficheNiemeObj(tabObj, n) {
     } else {
         alert('indice non trouvé');
     }
-};
+}
