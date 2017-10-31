@@ -1,4 +1,17 @@
 
+function addition(a, b) {
+    return a + b;
+}
+function soustraction(a, b) {
+    return a - b;
+}
+function multiplication(a, b) {
+    return a * b;
+}
+function division(a, b) {
+    return a / b;
+}
+
 function calculatrice () {
     var oper = prompt('Quel type d\'opération soouhaitez-vous réaliser ? : +, -, *, /');
     var nbre1 = parseInt(prompt('la première valeur :'));
@@ -7,16 +20,16 @@ function calculatrice () {
 
     switch (oper) {
         case '+':
-            resultat = nbre1 + nbre2;
+            resultat = addition(nbre1, nbre2);
             break;
         case '-':
-            resultat = nbre1 - nbre2;
+            resultat = soustraction(nbre1, nbre2);
             break;
         case '*':
-            resultat = nbre1 * nbre2;
+            resultat = multiplication(nbre1, nbre2);
             break;
         case '/':
-            resultat = nbre1 / nbre2;
+            resultat = division(nbre1, nbre2);
             break;
         default:
             resultat = null;
@@ -30,4 +43,4 @@ function calculatrice () {
     }
 }
 
-calculatrice();
+// calculatrice();

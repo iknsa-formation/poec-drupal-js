@@ -1,5 +1,4 @@
 function afficheTab () {
-    var tab = ['khalid', 'moussa', 'moustakime', 'noemi', 'inconnu'];
 
     for (var i=0; i < tab.length; i++) {
         alert(tab[i]);
@@ -71,3 +70,20 @@ function afficheNiemeObj(tabObj, n) {
         alert('indice non trouvé');
     }
 }
+
+function objetNatifs () {
+    var tab = ['khalid', 'moussa', 'moustakime', 'noemi', 'inconnu'];
+    var chaine_jointure = tab.join(';');
+    console.log('chaine', chaine_jointure);
+    var tab2 = chaine_jointure.split(';');
+    console.log('tableau', tab2);
+}
+
+function afficheDate() {
+
+    var date = new Date();
+
+    alert(date);
+}
+
+// afficheDate();

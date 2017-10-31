@@ -16,4 +16,3 @@ alors afficher (var1-var2)
 *
 /
 %
-
