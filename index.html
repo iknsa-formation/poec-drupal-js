@@ -1,25 +1,27 @@
-<html> 
+<html>
+
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="test.js"></script>
-    <script type="text/javascript" src="step.js"></script>
-    <script type="text/javascript" src="calc.js"></script>
-    <script type="text/javascript" src="dom.js"></script>
-    <script type="text/javascript" src="dom.js"></script>
+    <script src="jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="j3.2.js"></script>
+    <link rel="stylesheet" href="switch_color.css">
 </head>
 
 <body>
-    <h1>TEST</h1>
-    
-    <form>
-        <input id="prenom" type="text" name="prenom" value="Vincent">
-        <input id="nom" type="text" name="nom" value="Nanoninja">
-        <input id="submit" type="button" name="submit" value="Valider">
-    </form>
-
-    <div>
-        <input id="resultat">
+    <h1>Incredibly Basic Slider</h1>
+    <div id="slider">
+        <a href="#" class="control_next">>></a>
+        <a href="#" class="control_prev"><<</a>
+        <ul>
+            <li>SLIDE 1</li>
+            <li style="background: #aaa;">SLIDE 2</li>
+            <li>SLIDE 3</li>
+            <li style="background: #aaa;">SLIDE 4</li>
+        </ul>
     </div>
-    
+    <div class="slider_option">
+        <input type="checkbox" id="checkbox">
+        <label for="checkbox">Autoplay Slider</label>
+    </div>
 </body>
+
 </html>
