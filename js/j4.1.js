@@ -57,3 +57,79 @@ var supprimer = function (id) {
         }
     });
 };
+
+var voir = function (id) {
+    $.ajax({
+        url: 'services/api.php',
+        data: {
+            method: 'getAuthorById',
+            id_auteur: id
+        },
+        dataType: 'json',
+        success: function (auteur) {
+            auteur = auteur[0];
+            var res = '<div class="align-center">';
+            res += '<span>' + auteur.nom + '</span>';
+            res += '<span>' + auteur.prenom + '</span>';
+            res += '<span>' + auteur.fonction + '</span>';
+            res += '</div>';
+
+            $('#detail-auteur').html(res);
+        },
+        error: function () {
+
+        }
+    });
+};
+
+var modifier = function (id) {
+    $.ajax({
+        url: 'services/api.php',
+        data: {
+            method: 'getAuthorById',
+            id_auteur: id
+        },
+        dataType: 'json',
+        success: function (auteur) {
+            auteur = auteur[0];
+            $('#nom').val(auteur.nom);
+            $('#prenom').val(auteur.prenom);
+            $('#fonction').val(auteur.fonction);
+
+            $('#submit').click(function () {
+                edit(id);
+            });
+        },
+        error: function () {
+
+        }
+    });
+};
+
+var edit = function (id) {
+    var nom = $('#nom').val();
+    var prenom = $('#prenom').val();
+    var fonction = $('#fonction').val();
+
+    $.ajax({
+        url: 'services/api.php',
+        data: {
+            method: 'editAuthor',
+            id_auteur: id,
+            nom: nom,
+            prenom: prenom,
+            fonction: fonction
+        },
+        dataType: 'json',
+        success: function (auteur) {
+            auteur = auteur[0];
+            $('#nom').val('');
+            $('#prenom').val('');
+            $('#fonction').val('');
+            listAuthors();
+        },
+        error: function () {
+
+        }
+    });
+};
