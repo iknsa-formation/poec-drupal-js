@@ -1,5 +1,5 @@
 $(function () {
-    $('#checkbox').change(function(){
+    $('#checkbox').change(function () {
         setInterval(function () {
             moveRight();
         }, 3000);
@@ -10,29 +10,35 @@ $(function () {
     var slideHeight = $('#slider ul li').height();
     var sliderUlWidth = slideCount * slideWidth;
 
-    $('#slider').css({ width: slideWidth, height: slideHeight });
+    $('#slider').css({
+        width: slideWidth,
+        height: slideHeight
+    });
 
-    $('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+    $('#slider ul').css({
+        width: sliderUlWidth,
+        marginLeft: -slideWidth
+    });
 
     $('#slider ul li:last-child').prependTo('#slider ul');
 
     function moveLeft() {
         $('#slider ul').animate({
-            left: + slideWidth
+            left: +slideWidth
         }, 200, function () {
             $('#slider ul li:last-child').prependTo('#slider ul');
             $('#slider ul').css('left', '');
         });
-    };
+    }
 
     function moveRight() {
         $('#slider ul').animate({
-            left: - slideWidth
+            left: -slideWidth
         }, 200, function () {
             $('#slider ul li:first-child').appendTo('#slider ul');
             $('#slider ul').css('left', '');
         });
-    };
+    }
 
     $('a.control_prev').click(function () {
         moveLeft();
