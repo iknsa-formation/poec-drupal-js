@@ -4,8 +4,7 @@ $(function () {
         ajouter();
     });
     $('#submit-edit').click(function () {
-        var id = $('#id-auteur').val();
-        edit(id);
+        edit();
     });
 });
 

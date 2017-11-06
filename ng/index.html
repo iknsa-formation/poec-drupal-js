@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="script.js"></script>
+    <title>Angular JS</title>
+</head>
+
+<body ng-app="appPoec">
+    <div ng-controller="poecCtrl">
+        {{user.lastname}}
+        <input type="text" ng-model="test"> {{test}}
+        <input type="text" name="" id="" ng-model="a">
+        <input type="text" name="" id="" ng-model="b">
+        <input type="text" name="" id="" ng-model="res">
+        <input type="button" name="" id="" ng-click="addition()" value="res">
+    </div>
+    <div ng-controller="autreCtrl">
+        {{user.lastname}}
+    </div>
+</body>
+
+</html>
