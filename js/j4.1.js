@@ -3,6 +3,10 @@ $(function () {
     $('#submit-add').click(function () {
         ajouter();
     });
+    $('#submit-edit').click(function () {
+        var id = $('#id-auteur').val();
+        edit(id);
+    });
 });
 
 function listAuthors() {
@@ -102,10 +106,7 @@ var modifier = function (id) {
             $('#nom').val(auteur.nom);
             $('#prenom').val(auteur.prenom);
             $('#fonction').val(auteur.fonction);
-
-            $('#submit-edit').click(function () {
-                edit(id);
-            });
+            $('#id-auteur').val(auteur.id_auteur);
         },
         error: function () {
 
@@ -113,10 +114,11 @@ var modifier = function (id) {
     });
 };
 
-var edit = function (id) {
+var edit = function () {
     var nom = $('#nom').val();
     var prenom = $('#prenom').val();
     var fonction = $('#fonction').val();
+    var id = $('#id-auteur').val();
 
     $.ajax({
         url: 'services/api.php',
