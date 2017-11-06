@@ -1,8 +1,13 @@
 $(function () {
     listAuthors();
+    $('#submit-add').click(function () {
+        ajouter();
+    });
 });
 
 function listAuthors() {
+    $('#submit-edit').hide();
+    $('#submit-add').show();
     $.ajax({
         url: 'services/api.php',
         dataType: 'json',
@@ -83,6 +88,8 @@ var voir = function (id) {
 };
 
 var modifier = function (id) {
+    $('#submit-edit').show();
+    $('#submit-add').hide();
     $.ajax({
         url: 'services/api.php',
         data: {
@@ -96,7 +103,7 @@ var modifier = function (id) {
             $('#prenom').val(auteur.prenom);
             $('#fonction').val(auteur.fonction);
 
-            $('#submit').click(function () {
+            $('#submit-edit').click(function () {
                 edit(id);
             });
         },
@@ -123,6 +130,32 @@ var edit = function (id) {
         dataType: 'json',
         success: function (auteur) {
             auteur = auteur[0];
+            $('#nom').val('');
+            $('#prenom').val('');
+            $('#fonction').val('');
+            listAuthors();
+        },
+        error: function () {
+
+        }
+    });
+};
+
+var ajouter = function () {
+    var nom = $('#nom').val();
+    var prenom = $('#prenom').val();
+    var fonction = $('#fonction').val();
+
+    $.ajax({
+        url: 'services/api.php',
+        data: {
+            method: 'addAuthor',
+            nom: nom,
+            prenom: prenom,
+            fonction: fonction
+        },
+        dataType: 'json',
+        success: function () {
             $('#nom').val('');
             $('#prenom').val('');
             $('#fonction').val('');
