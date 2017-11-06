@@ -8,16 +8,26 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="script.js"></script>
     <title>Angular JS</title>
+    <style>
+        .done {
+            text-decoration: line-through;
+        }
+    </style>
 </head>
 
 <body ng-app="appPoec">
     <div ng-controller="poecCtrl">
-        {{user.lastname}}
-        <input type="text" ng-model="test"> {{test}}
-        <input type="text" name="" id="" ng-model="a">
-        <input type="text" name="" id="" ng-model="b">
-        <input type="text" name="" id="" ng-model="res">
-        <input type="button" name="" id="" ng-click="addition()" value="res">
+        <div>
+            {{todoList}}
+            <ul>
+                <li ng-class="{ 'done' :list.done}" ng-repeat="list in todoList">
+                    <input type="checkbox" value="true" ng-model="list.done"> {{list.name}}
+                </li>
+            </ul>
+            <button ng-click="archiver()">Archiver</button>
+            <input type="text" ng-model="newTodo">
+            <button ng-click="add()">add</button>
+        </div>
     </div>
     <div ng-controller="autreCtrl">
         {{user.lastname}}
